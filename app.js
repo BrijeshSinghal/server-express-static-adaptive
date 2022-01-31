@@ -7,6 +7,10 @@ const app = express();
 // bring in path
 const path = require("path");
 
+// middleware logger
+const logger = require("./middleware/logger");
+app.use(logger);
+
 // importing routes
 const desktop = require("./routes/desktop");
 const tablet = require("./routes/tablet");
