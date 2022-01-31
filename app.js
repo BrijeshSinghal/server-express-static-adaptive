@@ -23,11 +23,10 @@ app.set("view engine", "handlebars");
 // screenvalidation get request
 app.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname, "public", "screenValidation.html"));
-	// res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // set static folder (home dir for requests)
-// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // route phone
 app.use("/phone", phone);
