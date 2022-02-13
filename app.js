@@ -13,27 +13,19 @@ app.use(logger);
 
 // importing routes
 const desktop = require("./routes/desktop");
-const tablet = require("./routes/tablet");
-const phone = require("./routes/phone");
+const mobile = require("./routes/mobile");
 
 // set view engine to express handlebars
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 
-// screenvalidation get request
-app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname, "public", "screenValidation.html"));
-});
-
 // set static folder (home dir for requests)
 app.use(express.static(path.join(__dirname, "public")));
 
-// route phone
-app.use("/phone", phone);
-// route tablet
-app.use("/tablet", tablet);
+// route mobile
+app.use("/mobile", mobile);
 // route desktop
-app.use("/desktop", desktop);
+app.use("/", desktop);
 
 // port
 const PORT = 80;

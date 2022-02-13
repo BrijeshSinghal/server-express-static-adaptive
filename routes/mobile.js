@@ -3,16 +3,16 @@ const router = express.Router();
 
 // default get request
 router.get("/", (req, res) => {
-	res.render("index/desktop/home", {
-		layout: "desktop",
+	res.render("index/mobile/home", {
+		layout: "mobile",
 	});
 });
 
 router.get("/test", (req, res) => {
-	res.render("index/desktop/home", {
-		layout: "desktop",
+	res.render("index/mobile/home", {
+		layout: "mobile",
 	});
-	console.log("hello desktop test");
+	console.log("hello mobile test");
 });
 
 module.exports = router;
